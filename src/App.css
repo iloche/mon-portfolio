@@ -1,0 +1,247 @@
+/* 1. VARIABLES ET BASE */
+:root {
+  --primary-pink: #ffafbd;
+  --magic-purple: #c9ffbf;
+  --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --glass: rgba(255, 255, 255, 0.15);
+  --text-light: #fff0f5;
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box; /* Indispensable pour que le padding ne casse pas tout */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-light);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2. MISE EN PAGE (LAYOUT) */
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 100px 20px; /* 100px en haut pour laisser la place à la Nav */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  width: 100%;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-intro {
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.bio-card p {
+  font-size: 1.25rem;
+  line-height: 1.8; /* Pour que le texte respire */
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.bio-card strong {
+  color: var(--primary-pink);
+  text-shadow: 0 0 10px rgba(255, 175, 189, 0.3); /* Un léger halo rose sur les mots importants */
+}
+
+.about-intro strong {
+  color: var(--primary-pink); /* Utilise ta variable de couleur rose */
+  font-weight: 600;
+}
+
+/* 3. NAVIGATION MAGIQUE */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Assez haut pour rester au-dessus */
+  background: rgba(118, 75, 162, 0.6);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+  position: relative;
+  margin-left: 20px;
+}
+
+.nav-link:hover { color: var(--primary-pink); }
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0; height: 2px;
+  bottom: -5px; left: 0;
+  background-color: var(--primary-pink);
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after { width: 100%; }
+
+/* 4. COMPOSANTS (CARDS & GRIDS) */
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-pink);
+  box-shadow: 0 0 30px rgba(255, 175, 189, 0.3);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+/* 5. TYPOGRAPHIE */
+h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 20px; }
+h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 40px; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+p{
+  padding-bottom: 50px;
+  font-size: 20px;
+}
+
+/* 6. RESPONSIVE (MOBILE-FIRST) */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-link { margin: 0 10px; }
+  
+  main { padding-top: 140px; } /* Plus d'espace car la nav est plus haute en colonne */
+}
+
+/* Style spécifique pour le bouton magique des projets */
+.magic-btn {
+  marginTop: 20px;
+  background: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 15px;
+  position: relative;
+  z-index: 10;
+  cursor: pointer; /* Force l'apparition de la main au survol */
+  font-weight: bold;
+  color: #764ba2;
+}
+
+/* Tag des technologies */
+.tech-tag {
+  margin: 10px 0;
+  font-size: 0.8rem;
+  font-weight: bold;
+  opacity: 0.8;
+  color: #c9ffbf;
+}
+
+/* Formulaire de contact */
+.contact-form {
+  max-width: 600px;
+  width: 100%;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.submit-btn {
+  background: linear-gradient(45deg, #ffafbd, #764ba2);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1rem;
+  }
+
+/* L'effet de lueur interne des cartes */
+.glow-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* ESSENTIEL : permet au clic de traverser la lueur pour toucher le bouton */
+  z-index: 0;
+}
+
+.project-preview {
+  width: 100%;
+  height: 200px; /* Ajuste selon tes besoins */
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* L'image remplit le cadre sans se déformer */
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-preview img {
+  transform: scale(1.1); /* Petit effet de zoom au survol de la carte */
+}
