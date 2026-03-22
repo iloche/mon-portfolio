@@ -1,0 +1,45 @@
+.garden-section {
+  padding: 50px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  margin: 40px;
+  border: 2px dashed #b4e197;
+}
+
+.garden-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.watering-can {
+  width: 80px;
+  cursor: grab;
+  filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.5));
+}
+
+.watering-can:active { cursor: grabbing; }
+
+.plots {
+  display: flex;
+  gap: 40px;
+}
+
+.plot {
+  width: 80px;
+  height: 80px;
+  background: #fdf0f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border: 2px solid #ffb6c1;
+  position: relative;
+}
+
+.flower-grown {
+  filter: drop-shadow(0 0 8px pink);
+}

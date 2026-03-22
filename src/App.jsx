@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Code2, Heart, Send } from 'lucide-react';
+import { Code2, Send } from 'lucide-react';
 import './App.css';
 import Stars from './components/Stars';
 import confetti from 'canvas-confetti';
+import BackToTop from './components/BackToTop';
+import ScrollLiane from './components/ScrollLiane';
+import MagicGarden from './components/MagicGarden';
+import ThemeToggle from './components/ThemeToggle';
 
 const MES_PROJETS = [
   {
@@ -33,6 +37,13 @@ const MES_PROJETS = [
 ];
 
 function App() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  }, [isDark]);
+
+
   // Fonction d'envoi de formulaire réelle avec Formspree
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -66,12 +77,13 @@ function App() {
 
   return (
     <div className="container">
+      <ThemeToggle isDark={isDark} setIsDark={setIsDark} />
       <Stars />
       
       <nav>
         <div className="nav-container">
           <div className="logo" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-            ✨ Iloche
+            Iloche
           </div>
           <div className="links">
             <a href="#skills" className="nav-link">Skills</a>
@@ -92,13 +104,10 @@ function App() {
         >
           <h1>Bienvenue dans mon <span>Portfolio</span></h1>
           <p>Développeuse Front-End Junior</p>
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-          >
-            <Sparkles color="#ffeb3b" size={48} />
-          </motion.div>
+           <MagicGarden />
         </motion.section>
+
+       
 
         {/* SECTION À PROPOS */}
 <motion.section 
@@ -189,16 +198,18 @@ function App() {
                 type="submit"
                 className="submit-btn"
               >
-                Envoyer le message✨
+                Envoyer le message
               </motion.button>
             </form>
           </motion.div>
           
           <footer>
-            Fait avec ✨ par Iloche © 2025
+            Fait avec amour par Iloche © 2025
           </footer>
         </section>
       </main>
+      <ScrollLiane />
+      <BackToTop />
     </div>
   );
 }

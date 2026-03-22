@@ -1,0 +1,32 @@
+.liane-container-left {
+  position: fixed;
+  left: 10px; /* Plus près du bord pour le côté organique */
+  top: 0;
+  bottom: 0;
+  width: 60px; /* Plus large pour l'ondulation */
+  z-index: 99;
+  pointer-events: none; /* Ne bloque pas les clics sur le site */
+}
+
+.liane-svg {
+  width: 100%;
+  height: 100%;
+}
+
+#liane-path {
+  /* Ces variables CSS sont mises à jour par Framer Motion dans le JSX */
+  stroke-dasharray: var(--liane-stroke-dasharray);
+  stroke-dashoffset: var(--liane-stroke-dashoffset);
+}
+
+.liane-details {
+  /* On cache les détails (feuilles, fleurs) au début */
+  opacity: 0;
+  animation: fadeInDetails 0.5s ease forwards;
+  animation-delay: 0.5s; /* Un petit délai pour que la liane pousse d'abord */
+}
+
+/* Une petite animation pour faire apparaître les détails de la liane */
+@keyframes fadeInDetails {
+  to { opacity: 1; }
+}
