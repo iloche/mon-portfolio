@@ -1,0 +1,55 @@
+.pet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  width: 35%;
+}
+
+.pet-bubble {
+  position: absolute;
+  bottom: 110%;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 12px;
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+  white-space: normal;
+}
+
+.pet-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: var(--glass);
+  border-right: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.troll-bubble {
+  border-color: var(--primary-pink);
+  color: var(--primary-pink);
+  font-weight: 600;
+  box-shadow: 0 0 15px var(--primary-pink);
+}
+
+.pet-avatar {
+  font-size: 2.8rem;
+  transition: transform 0.1s ease;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}

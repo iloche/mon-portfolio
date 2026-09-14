@@ -6,10 +6,9 @@ import Stars from './components/Stars';
 import confetti from 'canvas-confetti';
 import BackToTop from './components/BackToTop';
 import ScrollLiane from './components/ScrollLiane';
-import MagicGarden from './components/MagicGarden';
-import ThemeToggle from './components/ThemeToggle';
+import PetCompanion from './components/PetCompanion';
 
-const MES_PROJETS = [
+const MES_PROJETS_PERSO = [
   {
     titre: "QuizGrove",
     focus: "Data & Backend",
@@ -36,13 +35,34 @@ const MES_PROJETS = [
   }
 ];
 
+const MES_PROJETS_PRO = [
+  {
+    titre: "1Bet1Day",
+    focus: "Blabla",
+    description: "Plateforme Fullstack connectée à une API REST pour la génération dynamique de quiz (catégories, anecdotes, scoring). Authentification et persistance des données via Firebase.",
+    techno: "JavaScript • HTML • SCSS",
+    lien: "https://iloche.github.io/Evaluation-Javascript/",
+    image: "/public/1bet1day.png"
+  },
+  {
+    titre: "1Bet1Day",
+    focus: "Blabla",
+    description: "Plateforme Fullstack connectée à une API REST pour la génération dynamique de quiz (catégories, anecdotes, scoring). Authentification et persistance des données via Firebase.",
+    techno: "JavaScript • HTML • SCSS",
+    lien: "https://iloche.github.io/Evaluation-Javascript/",
+    image: "/quizgrove-screen.jpg"
+  },
+  {
+    titre: "1Bet1Day",
+    focus: "Blabla",
+    description: "Plateforme Fullstack connectée à une API REST pour la génération dynamique de quiz (catégories, anecdotes, scoring). Authentification et persistance des données via Firebase.",
+    techno: "JavaScript • HTML • SCSS",
+    lien: "https://iloche.github.io/Evaluation-Javascript/",
+    image: "/quizgrove-screen.jpg"
+  }
+]
+
 function App() {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
-  }, [isDark]);
-
 
   // Fonction d'envoi de formulaire réelle avec Formspree
   const handleFormSubmit = async (e) => {
@@ -77,13 +97,12 @@ function App() {
 
   return (
     <div className="container">
-      <ThemeToggle isDark={isDark} setIsDark={setIsDark} />
       <Stars />
       
       <nav>
         <div className="nav-container">
           <div className="logo" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-            Iloche
+            <img id='navpseudo' src="/public/logo_iloche.png" alt="logo" />
           </div>
           <div className="links">
             <a href="#skills" className="nav-link">Skills</a>
@@ -102,30 +121,26 @@ function App() {
           transition={{ duration: 1 }}
           className="hero"
         >
-          <h1>Bienvenue dans mon <span>Portfolio</span></h1>
-          <p>Développeuse Front-End Junior</p>
-           <MagicGarden />
+          <h1>Coucou, c'est <br /><img id='pseudo' src="/public/logo_nobg.png" alt="logo" /></h1>
         </motion.section>
 
        
-
         {/* SECTION À PROPOS */}
-<motion.section 
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ duration: 1.5 }}
-  className="about-intro"
->
-  <div className="glass-card bio-card">
-    <p>
-      Moi, c'est <strong>Iloche</strong> ! 🧚‍♀️ <br />
-      Éternelle curieuse, je ne me contente pas de coder des interfaces: j'aime créer des <strong>petits univers</strong>. 
-      De la rigueur technique d'une API à la magie d'un <strong>JavaScript pur</strong>, je démonte les problèmes complexes 
-      pour les remonter en expériences fluides et chaleureuses. Mon objectif ? Transformer chaque ligne de code 
+        <motion.section 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          className="about-intro"
+        >
+          <div className="glass-card bio-card">
+          <p>
+            Éternelle curieuse, je ne me contente pas de coder des interfaces: j'aime créer des <strong>petits univers</strong>. 
+            De la rigueur technique d'une API à la magie d'un <strong>JavaScript pur</strong>, je démonte les problèmes complexes 
+            pour les remonter en expériences fluides et chaleureuses. Mon <strong>objectif</strong> ? Transformer chaque ligne de code 
             en un moment numérique qui donne le sourire.
           </p>
-        </div>
-      </motion.section>
+          </div>
+        </motion.section>
 
         {/* SKILLS SECTION */}
         <section id="skills">
@@ -151,11 +166,37 @@ function App() {
           </div>
         </section>
 
+        <section id='pro'>
+             <h2>Mes Réalisations Professionnelles</h2>
+          <div className="grid-container">
+            {MES_PROJETS_PRO.map((projet, index) => (
+              <motion.div key={index} className="glass-card project-card">
+                <div className="project-preview">
+                  <div className="glow-effect" />
+                  <img src={projet.image} alt={`Preview ${projet.titre}`} />
+                </div>
+                <div className="project-info">
+                  <span className="project-focus">{projet.focus}</span>
+                  <h3>{projet.titre}</h3>
+                  <p>{projet.description}</p>
+                  <div className="tech-tag">{projet.techno}</div>
+                  <a href={projet.lien} target="_blank" rel="noreferrer">
+                    <motion.button whileHover={{ scale: 1.05 }} className="magic-btn">
+                      Voir le Projet
+                    </motion.button>
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+        </section>
+
         {/* PROJECTS SECTION */}
         <section id="projets">
-          <h2>Mes Réalisations</h2>
+          <h2>Mes Réalisations Personnelles</h2>
           <div className="grid-container">
-            {MES_PROJETS.map((projet, index) => (
+            {MES_PROJETS_PERSO.map((projet, index) => (
               <motion.div key={index} className="glass-card project-card">
                 <div className="project-preview">
                   <div className="glow-effect" />
@@ -177,6 +218,8 @@ function App() {
           </div>
         </section>
 
+        <PetCompanion />
+
         {/* CONTACT SECTION */}
         <section id="contact">
           <motion.div 
@@ -186,7 +229,7 @@ function App() {
           >
             <Send size={40} color="var(--primary-pink)" style={{ marginBottom: '20px' }} />
             <h2>Me contacter</h2>
-            <p>Une question ? Mon grimoire est ouvert !</p>
+            <p>Une question, un projet ? Écris-moi !</p>
 
             <form onSubmit={handleFormSubmit}>
               <input type="text" name="name" placeholder="Nom et prénom" required className="magic-input" />
@@ -203,13 +246,14 @@ function App() {
             </form>
           </motion.div>
           
-          <footer>
-            Fait avec amour par Iloche © 2025
-          </footer>
         </section>
+
       </main>
       <ScrollLiane />
       <BackToTop />
+      <footer>
+            Fait avec amour par Iloche © 2026
+          </footer>
     </div>
   );
 }

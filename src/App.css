@@ -75,10 +75,7 @@ section {
   text-shadow: 0 0 10px rgba(255, 175, 189, 0.3); /* Un léger halo rose sur les mots importants */
 }
 
-.about-intro strong {
-  color: var(--primary-pink); /* Utilise ta variable de couleur rose */
-  font-weight: 600;
-}
+
 
 /* 3. NAVIGATION MAGIQUE */
 nav {
@@ -149,7 +146,7 @@ nav {
 }
 
 /* 5. TYPOGRAPHIE */
-h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 20px; }
+h1 { font-size: clamp(2.5rem, 8vw, 4rem)}
 h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 40px; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
 p{
   padding-bottom: 50px;
@@ -244,4 +241,22 @@ p{
 
 .project-card:hover .project-preview img {
   transform: scale(1.1); /* Petit effet de zoom au survol de la carte */
+}
+
+#pseudo{
+  width: 40%;
+  box-shadow: 0 0 50px rgba(255, 175, 189, 0.3);
+  border-radius: 50%;
+  display: inline-block;
+  transform: rotate(-2deg);
+}
+
+#navpseudo{
+  width: 10%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+footer{
+  margin-bottom: 2%;
 }
