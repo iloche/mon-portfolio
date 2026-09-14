@@ -4,20 +4,28 @@
   --magic-purple: #c9ffbf;
   --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --glass: rgba(255, 255, 255, 0.15);
-  --text-light: #fff0f5;
+  color: #fdeed1;
   --max-width: 1200px;
 }
 
+@font-face {
+    font-family: 'Queenside';
+    src: url('fonts/QueensidesMedium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Quentine';
+    src: url('fonts/QuentineDEMO-Regular.otf') format('truetype');
+}
+
 * {
-  box-sizing: border-box; /* Indispensable pour que le padding ne casse pas tout */
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
   background: var(--bg-gradient);
-  color: var(--text-light);
   min-height: 100vh;
   overflow-x: hidden;
   line-height: 1.6;
@@ -27,7 +35,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 2. MISE EN PAGE (LAYOUT) */
+/* 2. MISE EN PAGE */
 .container {
   width: 100%;
   display: flex;
@@ -46,6 +54,7 @@ main {
 }
 
 section {
+  font-family: 'Queenside', sans-serif;
   width: 100%;
   margin-bottom: 80px;
   display: flex;
@@ -60,7 +69,6 @@ section {
   text-align: center;
   line-height: 1.6;
   font-size: 1.2rem;
-  color: #fff;
 }
 
 .bio-card p {
@@ -75,9 +83,14 @@ section {
   text-shadow: 0 0 10px rgba(255, 175, 189, 0.3); /* Un léger halo rose sur les mots importants */
 }
 
+.hero{
+  font-family: 'Quentine', sans-serif;
+}
 
+.special{
+  font-family: 'Quentine', sans-serif;
+}
 
-/* 3. NAVIGATION MAGIQUE */
 nav {
   position: fixed;
   top: 0;
@@ -101,11 +114,12 @@ nav {
 
 .nav-link {
   text-decoration: none;
-  color: white;
+  color: #fdeed1;
   font-weight: 500;
   transition: 0.3s;
   position: relative;
   margin-left: 20px;
+  font-family: 'Queenside', sans-serif;
 }
 
 .nav-link:hover { color: var(--primary-pink); }
@@ -245,18 +259,14 @@ p{
 
 #pseudo{
   width: 40%;
-  box-shadow: 0 0 50px rgba(255, 175, 189, 0.3);
-  border-radius: 50%;
-  display: inline-block;
-  transform: rotate(-2deg);
 }
 
 #navpseudo{
-  width: 10%;
-  border-radius: 50%;
+  width: 25%;
   cursor: pointer;
 }
 
 footer{
   margin-bottom: 2%;
+  font-family: 'Queenside', sans-serif;
 }

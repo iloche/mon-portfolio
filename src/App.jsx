@@ -38,9 +38,9 @@ const MES_PROJETS_PERSO = [
 const MES_PROJETS_PRO = [
   {
     titre: "1Bet1Day",
-    focus: "Blabla",
-    description: "Plateforme Fullstack connectée à une API REST pour la génération dynamique de quiz (catégories, anecdotes, scoring). Authentification et persistance des données via Firebase.",
-    techno: "JavaScript • HTML • SCSS",
+    focus: "DOM & JavaScript Vanilla",
+    description: "Plateforme de paris sportifs dynamique. Gestion complète du ticket de paris en JS natif: sélection des matchs, récapitulatif interactif avec suppression des choix et mode sombre.",
+    techno: "HTML5 • SCSS • JavaScript (ES6+)",
     lien: "https://iloche.github.io/Evaluation-Javascript/",
     image: "/public/1bet1day.png"
   },
@@ -102,12 +102,12 @@ function App() {
       <nav>
         <div className="nav-container">
           <div className="logo" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-            <img id='navpseudo' src="/public/logo_iloche.png" alt="logo" />
+            <img id='navpseudo' src="/public/logo-iloche-feuille.png" alt="logo" />
           </div>
           <div className="links">
-            <a href="#skills" className="nav-link">Skills</a>
-            <a href="#projets" className="nav-link">Projets</a>
-            <a href="#contact" className="nav-link">Contact</a>
+            <a href="#skills" className="nav-link"><span className='special'>S</span>kills</a>
+            <a href="#projets" className="nav-link"><span className='special'>P</span>rojets</a>
+            <a href="#contact" className="nav-link"><span className='special'>C</span>ontact</a>
           </div>
         </div>
       </nav>
