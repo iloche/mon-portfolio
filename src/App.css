@@ -10,12 +10,12 @@
 
 @font-face {
     font-family: 'Queenside';
-    src: url('fonts/QueensidesMedium.ttf') format('truetype');
+    src: url('fonts/queensidesmedium.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Quentine';
-    src: url('fonts/QuentineDEMO-Regular.otf') format('truetype');
+    src: url('fonts/quentinedemo-regular.otf') format('truetype');
 }
 
 * {
