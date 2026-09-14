@@ -42,7 +42,7 @@ const MES_PROJETS_PRO = [
     description: "Plateforme de paris sportifs dynamique. Gestion complète du ticket de paris en JS natif: sélection des matchs, récapitulatif interactif avec suppression des choix et mode sombre.",
     techno: "HTML5 • SCSS • JavaScript (ES6+)",
     lien: "https://iloche.github.io/Evaluation-Javascript/",
-    image: "/public/1bet1day.png"
+    image: "/1bet1day.png"
   },
   {
     titre: "1Bet1Day",
@@ -102,7 +102,7 @@ function App() {
       <nav>
         <div className="nav-container">
           <div className="logo" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-            <img id='navpseudo' src="/public/logo-iloche-feuille.png" alt="logo" />
+            <img id='navpseudo' src="/logo-iloche-feuille.png" alt="logo" />
           </div>
           <div className="links">
             <a href="#skills" className="nav-link"><span className='special'>S</span>kills</a>
@@ -121,7 +121,7 @@ function App() {
           transition={{ duration: 1 }}
           className="hero"
         >
-          <h1>Coucou, c'est <br /><img id='pseudo' src="/public/logo_nobg.png" alt="logo" /></h1>
+          <h1>Coucou, c'est <br /><img id='pseudo' src="/logo_nobg.png" alt="logo" /></h1>
         </motion.section>
 
        
