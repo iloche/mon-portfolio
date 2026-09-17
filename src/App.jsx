@@ -5,7 +5,7 @@ import './App.css';
 import Stars from './components/Stars';
 import confetti from 'canvas-confetti';
 import BackToTop from './components/BackToTop';
-import ScrollLiane from './components/ScrollLiane';
+// import ScrollLiane from './components/ScrollLiane';
 import PetCompanion from './components/PetCompanion';
 
 const MES_PROJETS_PERSO = [
@@ -45,20 +45,20 @@ const MES_PROJETS_PRO = [
     image: "/1bet1day.png"
   },
   {
-    titre: "1Bet1Day",
-    focus: "Blabla",
-    description: "Plateforme Fullstack connectée à une API REST pour la génération dynamique de quiz (catégories, anecdotes, scoring). Authentification et persistance des données via Firebase.",
-    techno: "JavaScript • HTML • SCSS",
-    lien: "https://iloche.github.io/Evaluation-Javascript/",
-    image: "/quizgrove-screen.jpg"
+    titre: "WhiteHall",
+    focus: "DOM & JavaScript Vanilla",
+    description: "Plateforme vitrine immersive dédiée à la présentation et à la vente de vins d'exception. Conception d'une interface dynamique permettant l'exploration des cuvées, le filtrage des produits et la mise en valeur du savoir-faire viticole.",
+    techno: "HTML5 • SCSS • JavaScript (ES6+)",
+    lien: "https://iloche.github.io/whitehall/",
+    image: "/WhiteHall.gif"
   },
   {
-    titre: "1Bet1Day",
-    focus: "Blabla",
-    description: "Plateforme Fullstack connectée à une API REST pour la génération dynamique de quiz (catégories, anecdotes, scoring). Authentification et persistance des données via Firebase.",
-    techno: "JavaScript • HTML • SCSS",
-    lien: "https://iloche.github.io/Evaluation-Javascript/",
-    image: "/quizgrove-screen.jpg"
+    titre: "Molly & Me",
+    focus: "DOM & JavaScript Vanilla",
+    description: "Site vitrine e-commerce mettant l'accent sur la mise en page moderne, les animations CSS fluides et structuration sémantique de la boutique.",
+    techno: "HTML5 • SCSS • JavaScript (ES6+)",
+    lien: "https://iloche.github.io/mollyandme/",
+    image: "/mollyandme.png"
   }
 ]
 
@@ -106,7 +106,8 @@ function App() {
           </div>
           <div className="links">
             <a href="#skills" className="nav-link"><span className='special'>S</span>kills</a>
-            <a href="#projets" className="nav-link"><span className='special'>P</span>rojets</a>
+            <a href="#projetspro" className="nav-link"><span className='special'>P</span>rojets <span className='special'>P</span>ro</a>
+            <a href="#projetsperso" className="nav-link"><span className='special'>P</span>rojets <span className='special'>P</span>erso</a>
             <a href="#contact" className="nav-link"><span className='special'>C</span>ontact</a>
           </div>
         </div>
@@ -166,7 +167,7 @@ function App() {
           </div>
         </section>
 
-        <section id='pro'>
+        <section id='projetspro'>
              <h2>Mes Réalisations Professionnelles</h2>
           <div className="grid-container">
             {MES_PROJETS_PRO.map((projet, index) => (
@@ -193,7 +194,7 @@ function App() {
         </section>
 
         {/* PROJECTS SECTION */}
-        <section id="projets">
+        <section id="projetsperso">
           <h2>Mes Réalisations Personnelles</h2>
           <div className="grid-container">
             {MES_PROJETS_PERSO.map((projet, index) => (
@@ -249,7 +250,7 @@ function App() {
         </section>
 
       </main>
-      <ScrollLiane />
+      {/* <ScrollLiane /> */}
       <BackToTop />
       <footer>
             Fait avec amour par Iloche © 2026
